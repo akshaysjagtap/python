@@ -23,26 +23,24 @@ def file_read():
 	print(content)
 	file.close()
 
-def file_read_line_by_line():
+def file_entire_data_split_at_new_line():
 	file = open('test.py', 'r')
 	lines = file.readlines()
 	for line in lines:
 		print line,
 	file.close()
 
-def file_read_in_chunks():
-	print "\nFile read in chunks:-"
-	file = open('test.py', 'r') 
-	while True: # from   w  w w  .j av a  2  s  .c o  m
-   		chunk = file.read(512)       # Read byte chunks: up to 10 bytes 
-   		print "chunk: ", chunk
-   		if not chunk: 
-   			break 
-    	print chunk, 
-    	
+def file_read_line_by_line():
+	file=open('test.py','r')
+	print "\nRead file line by line\n"
+	while True:
+		line=file.readline()
+		if line == '':
+			break  
+		print line,  	
 func()
 stdio()
 run_cmd()
 file_read()
+file_entire_data_split_at_new_line()
 file_read_line_by_line()
-file_read_in_chunks()
